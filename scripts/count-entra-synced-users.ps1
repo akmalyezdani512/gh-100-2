@@ -4,7 +4,7 @@ if (-not (Get-Module -ListAvailable -Name ExchangeOnlineManagement)) {
     throw "The ExchangeOnlineManagement module is required. Install it with: Install-Module ExchangeOnlineManagement -Scope CurrentUser"
 }
 
-Import-Module ExchangeOnlineManagement
+Import-Module ExchangeOnlineManagement -MinimumVersion '3.0.0'
 
 $connected = $false
 
