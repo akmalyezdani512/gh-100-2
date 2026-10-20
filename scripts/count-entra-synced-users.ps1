@@ -12,8 +12,11 @@ try {
     Connect-ExchangeOnline -ShowBanner:$false
     $connected = $true
 
-    $users = Get-User -ResultSize Unlimited
-    $syncedUserCount = @($users | Where-Object { $_.IsDirSynced -eq $true }).Count
+    $syncedUserCount = (
+        Get-User -ResultSize Unlimited |
+            Where-Object { $_.IsDirSynced -eq $true } |
+            Measure-Object
+    ).Count
 
     Write-Output "Entra-synced Exchange Online users: $syncedUserCount"
 }

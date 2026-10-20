@@ -9,7 +9,8 @@ is true.
 Prerequisites:
 
 - PowerShell 5.1 or later
-- An Exchange Online account with permission to read recipient information
+- An Exchange Online account assigned the **View-Only Recipients** management
+  role, directly or through a role group
 
 Install the Exchange Online module if needed, then run the script:
 
